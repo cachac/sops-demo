@@ -5,9 +5,9 @@ commonLabels:
   app: demoapp-staging
   env: staging
 resources:
-- 00-namespace.yml
-- 01-cm-config.yml
-- 02-secret-token.yml
+- 00-namespace.yaml
+- 01-cm-config.yaml
+- 02-secret-token.yaml
 # - ../../../../../workloads-base/api/demoapp-staging
 
 # patchesStrategicMerge:
