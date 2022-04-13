@@ -1,22 +1,37 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cm-private-api
-  namespace: default
+    name: cm-private-api
+    namespace: default
 data:
-  PRIVATE_API: http://svc-private-api.private.svc.cluster.local:3002/private
+    PRIVATE_API: ENC[AES256_GCM,data:i07kwrC4qRAFcHaxo3O03ax15HNj5tr1TUOix3rrxml/V3veUaZ4AyOkUFuvtsE+1SNLZ96EDkPsRDfNvQ==,iv:tdxSCe4ehKk7dgvOfK6KDslJB7ajqvPMrUy1PH5S3j4=,tag:g6eaOu1fMRGYkrA3hIWgZg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-04-13T06:34:35Z"
+    mac: ENC[AES256_GCM,data:mC+8UFAwxJ09Lco/B09BqXBip32umCiHRuaQ3/fMz1AKwTfSJYhbI24sD0M9audAEQP4Tg0TJyARdUmrN2MB94uS32w0jyLegoRD7iKThvFOrGZTeoPb4oP2eSNM2z8YAYUME3ewFHsxEfYL86Gpy3DRt9WmXSWPHHajWW6lWsY=,iv:5dFpy4RXTdfvmHEJMJ3xpi9fRuejme0iiqcqXL4Qj7E=,tag:WodLad5xdA5u8Awh6dXgIA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.2
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cm-webpage-config
-  namespace: default
-
+    name: cm-webpage-config
+    namespace: default
 data:
-  CONFIG_JS: |
-    var config = (() => {
-    return {
-      API: "http://api.kube-apps.tk/graphql",
-      WEBSOCKET: "ws://websocket.kube-apps.tk/graphql",
-    };
-    })();
+    CONFIG_JS: ENC[AES256_GCM,data:gocvcCmZhg3AYdtVBsV4rweYqCGSfhy8jLFVyl+fVOUf6gvJZr4Nntp9DYlpVP0X8p//F5XwfU3EpK2q/8M5vpvvFcZIEga4tMCFJRUtxQZqHIoK4poOiyxpOrADP7pMEA8KwL2tkWT2Nvt8grWqkkmjbGnTtJwqxXwPAMATgCoq412g5So=,iv:jqvqh+p8QbtcZE9yQ6uTMLgRfQp9ZJJlkS5TsjSsifA=,tag:MPyCKKqvndE8tBssdESLkg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-04-13T06:34:35Z"
+    mac: ENC[AES256_GCM,data:mC+8UFAwxJ09Lco/B09BqXBip32umCiHRuaQ3/fMz1AKwTfSJYhbI24sD0M9audAEQP4Tg0TJyARdUmrN2MB94uS32w0jyLegoRD7iKThvFOrGZTeoPb4oP2eSNM2z8YAYUME3ewFHsxEfYL86Gpy3DRt9WmXSWPHHajWW6lWsY=,iv:5dFpy4RXTdfvmHEJMJ3xpi9fRuejme0iiqcqXL4Qj7E=,tag:WodLad5xdA5u8Awh6dXgIA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.2
