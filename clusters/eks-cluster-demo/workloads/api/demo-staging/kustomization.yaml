@@ -1,19 +1,21 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: accountfacilities-devel
+namespace: demoapp-staging
 commonLabels:
-  app: accountfacilities
-  env: devel
+  app: demoapp-staging
+  env: staging
 resources:
-- namespace.yaml
-- ../../../../../workloads-base/api/accountfacilities
-- conf.yaml
-patchesStrategicMerge:
-- deployment.yaml
-- destination-rule.yaml
-- virtual-service.yaml
-configMapGenerator:
-- name: policy-enforcer
-  behavior: replace
-  files:
-    - configs/policy-enforcer-devel.json
+- 00-namespace.yml
+- 01-cm-config.yml
+- 02-secret-token.yml
+# - ../../../../../workloads-base/api/demoapp-staging
+
+# patchesStrategicMerge:
+# - deployment.yaml
+# - destination-rule.yaml
+# - virtual-service.yaml
+# configMapGenerator:
+# - name: policy-enforcer
+#   behavior: replace
+#   files:
+#     - configs/policy-enforcer-devel.json
