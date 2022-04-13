@@ -2,8 +2,8 @@ creation_rules:
   - path_regex: .*.yaml
     encrypted_regex: ^(data|stringData)$
     key_groups:
-      # - kms:
-      #     - arn: "arn:aws:kms:us-east-1:367816904393:key/fb611257-edc6-487e-8e6d-62b089ae6ef9"
-      #       aws_profile: demo # login aws profile
-      - pgp:
+      - kms:
+        - arn: "arn:aws:kms:us-east-1:367816904393:key/fb611257-edc6-487e-8e6d-62b089ae6ef9"
+          aws_profile: demo # login aws profile
+        pgp:
         - "C3FEBC7F6AA094882569460B7EEA4945E3CB4D5B"
