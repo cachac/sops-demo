@@ -1,85 +1,22 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-    name: cm-private-api
-    namespace: default
+  name: cm-private-api
+  namespace: default
 data:
-    PRIVATE_API: ENC[AES256_GCM,data:65vRz0B7kJOKWV1tMFZYU8mIk4ag84mEC2x2uGjZDg2MPbbOc06h86m3vIGtiZxhqEcHaMzC/p3CsIBM1A==,iv:CTV/S5iLKO50+Fie3VgCIxvttaqMC6HEpa0HPNSG2XY=,tag:XzW2oLQcy2UtKCfzWsKQ4A==,type:str]
-sops:
-    kms:
-        - arn: arn:aws:kms:us-east-1:367816904393:key/fb611257-edc6-487e-8e6d-62b089ae6ef9
-          created_at: "2022-04-13T16:54:54Z"
-          enc: AQICAHj9y4jwzVh1ScftfkXqEeOrE1TqkYoOoIbQDmcnTS3ukwEXCMR+I7rStNh1u8IHHRT7AAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMcgYnaN4Rt12ZU5M8AgEQgDvC8dVWhOB2F7Qd0cDqsz5RP3wC6aV5W/pJuSIozTlKa+vrUrzz/aTxDV5cwNBagYM4KMh3TWPqKCtBYA==
-          aws_profile: ""
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2022-04-13T16:54:55Z"
-    mac: ENC[AES256_GCM,data:wcV7NOrmxF6rhJAs+zpKaQTB1rmGSYhM0kkm0Gm/cO4m/F8N+wSjlQaLEwBsoFd4RT+GWig2jgdx5oni8wdxkFLljNgq42HEx0v7wxmy3Lo2Pf20ro01M8TRK58M5oU0bK1MBnam1FV2GvsBIJpfCy5qv+nSEqliibhc/SYEVA4=,iv:2GyhmdQIPycwx4fccgWm//NDCueCtqmY8sEg/BrbHpE=,tag:C9m8frLYIy8Y9WWsd+KcKg==,type:str]
-    pgp:
-        - created_at: "2022-04-13T16:54:54Z"
-          enc: |
-            -----BEGIN PGP MESSAGE-----
-
-            hQIMA9M/oS8IfYXHARAAtXVzQpmMXcBCLTIFDfUua1mWPBt3rPTlotY2m3KIClEE
-            ZWoJtsVjQL2AQUfy3pTPauLPLhf11Qw518YIFbvcrML8veGH5T7Td1nZjXa1f2fO
-            5MnI8Ed3IJUAPNtbKOHQ4RZaTZcbe2HSIPt9O0752G1K5KSpsGAvWA47xtA8uFsC
-            ECyCYuHkpQ202VcnSW4EcZTHzlN7IiE+MH2kUS0gYWp2ZnhGTY0ZACNBz890pXFG
-            ehMMEUuKtD+y+aokjtSa5tr1/VNo2H/+oCEV1/B4qK+30aWy/NN0/EWPE/QTKfaB
-            BZAIOe1CaLWcBEX6tD1z94C+tJS0E1F2Bs3XMxMG48R9OqU8o/PiQB/lwGTqZYqq
-            zb9cq2SvvdCfFjQsb8ufR24NlcN/avnzPp5Tbb3NBpbqfsSvFAcdojPuDUnYDliG
-            8gq4dwSfZHlBVY9E4nFF419CL9E6KP0BoVGkp5HdfqlnCfdOaUHUeILb6v+ETPT7
-            dcMOK/sg3t7YF3DDDr8yjAEQcx2nfiIDiYcIgh+Gr8WQWAnC/W8RoAJfsG2Sfdhd
-            Wl1IrPhusp0db8zQdyzX/ze9BLfer5xjU85a6xunGWObQBR10N4MuyiOCwQWA5kq
-            mwxzh6lArhMuddXbpGCnOu5f18OXl9d1n7WofGZ08JOhyES/13V2BJsgfDXXBYvS
-            XgEILBOmxb6KhHL+XmrC6OhyUi6yvOSbO54R2lqCsato6pd29xLA6KDuyxMwl5Nn
-            mdKP1O4l3P1J8Mlg6E5TUAT+8H3TYSBFPmVUxElZfPj0mLosZZtcY/PUEwOrmdw=
-            =49i5
-            -----END PGP MESSAGE-----
-          fp: C3FEBC7F6AA094882569460B7EEA4945E3CB4D5B
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.2
+  PRIVATE_API: http://svc-private-api.private.svc.cluster.local:3002/private
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-    name: cm-webpage-config
-    namespace: default
-data:
-    CONFIG_JS: ENC[AES256_GCM,data:/DNjwIlpsQ/mt0dOGriwl4+qf0BH1PPBSGt8rM46C0pyyN8zmbmGPYzEZYJI6TpTTHWT7PqL+nqL1tDHfP/yTRaFMlbimphVQi+xue3QH8UUIpOepheeE+umhEpG+HgvtWjk8R65pJyG7vgzpgWu80fXwGOAZK8hZZOI2yLQ2hwtVMhcnL8=,iv:PUy4R3JoTxrLNQCfREZ+9/jnLf4QTAktYAw+9Xj4LjE=,tag:ONRNKc26hbvRutObNG9Tpg==,type:str]
-sops:
-    kms:
-        - arn: arn:aws:kms:us-east-1:367816904393:key/fb611257-edc6-487e-8e6d-62b089ae6ef9
-          created_at: "2022-04-13T16:54:54Z"
-          enc: AQICAHj9y4jwzVh1ScftfkXqEeOrE1TqkYoOoIbQDmcnTS3ukwEXCMR+I7rStNh1u8IHHRT7AAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMcgYnaN4Rt12ZU5M8AgEQgDvC8dVWhOB2F7Qd0cDqsz5RP3wC6aV5W/pJuSIozTlKa+vrUrzz/aTxDV5cwNBagYM4KMh3TWPqKCtBYA==
-          aws_profile: ""
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2022-04-13T16:54:55Z"
-    mac: ENC[AES256_GCM,data:wcV7NOrmxF6rhJAs+zpKaQTB1rmGSYhM0kkm0Gm/cO4m/F8N+wSjlQaLEwBsoFd4RT+GWig2jgdx5oni8wdxkFLljNgq42HEx0v7wxmy3Lo2Pf20ro01M8TRK58M5oU0bK1MBnam1FV2GvsBIJpfCy5qv+nSEqliibhc/SYEVA4=,iv:2GyhmdQIPycwx4fccgWm//NDCueCtqmY8sEg/BrbHpE=,tag:C9m8frLYIy8Y9WWsd+KcKg==,type:str]
-    pgp:
-        - created_at: "2022-04-13T16:54:54Z"
-          enc: |
-            -----BEGIN PGP MESSAGE-----
+  name: cm-webpage-config
+  namespace: default
 
-            hQIMA9M/oS8IfYXHARAAtXVzQpmMXcBCLTIFDfUua1mWPBt3rPTlotY2m3KIClEE
-            ZWoJtsVjQL2AQUfy3pTPauLPLhf11Qw518YIFbvcrML8veGH5T7Td1nZjXa1f2fO
-            5MnI8Ed3IJUAPNtbKOHQ4RZaTZcbe2HSIPt9O0752G1K5KSpsGAvWA47xtA8uFsC
-            ECyCYuHkpQ202VcnSW4EcZTHzlN7IiE+MH2kUS0gYWp2ZnhGTY0ZACNBz890pXFG
-            ehMMEUuKtD+y+aokjtSa5tr1/VNo2H/+oCEV1/B4qK+30aWy/NN0/EWPE/QTKfaB
-            BZAIOe1CaLWcBEX6tD1z94C+tJS0E1F2Bs3XMxMG48R9OqU8o/PiQB/lwGTqZYqq
-            zb9cq2SvvdCfFjQsb8ufR24NlcN/avnzPp5Tbb3NBpbqfsSvFAcdojPuDUnYDliG
-            8gq4dwSfZHlBVY9E4nFF419CL9E6KP0BoVGkp5HdfqlnCfdOaUHUeILb6v+ETPT7
-            dcMOK/sg3t7YF3DDDr8yjAEQcx2nfiIDiYcIgh+Gr8WQWAnC/W8RoAJfsG2Sfdhd
-            Wl1IrPhusp0db8zQdyzX/ze9BLfer5xjU85a6xunGWObQBR10N4MuyiOCwQWA5kq
-            mwxzh6lArhMuddXbpGCnOu5f18OXl9d1n7WofGZ08JOhyES/13V2BJsgfDXXBYvS
-            XgEILBOmxb6KhHL+XmrC6OhyUi6yvOSbO54R2lqCsato6pd29xLA6KDuyxMwl5Nn
-            mdKP1O4l3P1J8Mlg6E5TUAT+8H3TYSBFPmVUxElZfPj0mLosZZtcY/PUEwOrmdw=
-            =49i5
-            -----END PGP MESSAGE-----
-          fp: C3FEBC7F6AA094882569460B7EEA4945E3CB4D5B
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.2
+data:
+  CONFIG_JS: |
+    var config = (() => {
+    return {
+      API: "http://api.kube-apps.tk/graphql",
+      WEBSOCKET: "ws://websocket.kube-apps.tk/graphql",
+    };
+    })();
