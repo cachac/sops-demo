@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: accountfacilities-devel
+commonLabels:
+  app: accountfacilities
+  env: devel
+resources:
+- namespace.yaml
+- ../../../../../workloads-base/api/accountfacilities
+- conf.yaml
+patchesStrategicMerge:
+- deployment.yaml
+- destination-rule.yaml
+- virtual-service.yaml
+configMapGenerator:
+- name: policy-enforcer
+  behavior: replace
+  files:
+    - configs/policy-enforcer-devel.json
