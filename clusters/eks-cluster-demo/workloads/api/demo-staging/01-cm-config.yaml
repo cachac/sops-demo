@@ -1,77 +1,22 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-    name: cm-private-api
-    namespace: public
+  name: cm-private-api
+  namespace: default
 data:
-    PRIVATE_API: ENC[AES256_GCM,data:bH7DAn2G8QDGXuVYuwW3ghUHigKmwdFdiAid+1nG/M/7PYAxykVcnRanJNxQeb+psVjC2e0imYJRDGU16A==,iv:fhMg/kpBR5aYPTfUYRmzC16WoRxWwzmblC+vQoW3wt4=,tag:HmEIbXFcWjsFXhz6SPFtMQ==,type:str]
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2022-04-13T06:07:50Z"
-    mac: ENC[AES256_GCM,data:42+ct0hkTw5BmTlVvYxfC9sxAN7oye0Ezh1Hi9HGhWHxNs645PfgzKV7D0DCl/odDGdRwuxoJ6taGeafez20gfQ8D5/TIWYrd8HALgTHq4/HfIbBgdKCa5KQnsBB2VLzlbJYBIKJ20o7AWUMIzZzgMv+F5phlq+ZNDDh1reRdQs=,iv:tfLfNrxlSJxPCni09KERUTM7s0EM8flBE2ZOTlK1n9g=,tag:M/s8mmHRz+M+MgamkTYgXQ==,type:str]
-    pgp:
-        - created_at: "2022-04-13T06:07:49Z"
-          enc: |
-            -----BEGIN PGP MESSAGE-----
-
-            hQIMA9M/oS8IfYXHAQ//SLOG5pDxNrTQyXhjfIPT4eCHqLIBdNrThRnjrjhGpMA0
-            L9nJTHvt7/d6tnCHPF8l1QlCAD0An6ogvtc92Z9HopHb7ZxlgBCpD8bR1IqZH2SC
-            ap28xMUX6RpVH+0U2ypMSdZ8GRvXnnBm/DhD7sVPNlRUNhaJ8vw16Atmpz7lMA4d
-            3Gh2Z8kzkC92+khxIjeXZLv3KGPiMPoE7Zi9oCKECvjXs5PKekn24OEuzuTy7S/f
-            bcC1jmRskiYKegVlDcGo6sjr6bOTYOSLmAnPA44LMe6savAaAaJJxy1/jIP0x0u/
-            xfW7eZ51Bqlh5XTRz8IrNJV+fmTMDHXRSoJAT/bn64rHEXZqoCqywT9NUb+FpkeW
-            ZfU0UbB7d8lAv8t/Fi34J7xAswFX6tHJlFDKNCi18nR4gnrcYmsQFcsbBUjeA7qG
-            oJH/cMGe53bTQa1ilgUeL+S8keOasloeqsnXX4C+5bWrBalhRsE7HjUKP3YBIQPm
-            X55G0e7NU+0TDU1syKVW0ucVSfxr6WXaPgXoXdPBUZyVDllIgBZVoofyxqUDHVAw
-            kKACeWbeB2WyW6OuAguAWyS0GbBWsMo/liT92EzmXU5J9QIE1tdskqJ7dQXzGk79
-            /GzYICA8jeSSGhCOzlUCK8WLkO2GoOqwS8aQ7oZLaE1nstvczjUevCbq/tAPsanS
-            XgENJv4tJuf92vQJ3L5ZrJ/+Z1EtHp28cmpxUOwGXNmybLfglbzMm4p37ZK3Vt/2
-            +piMaX5y7HxBSQpzZXEHScOegqXSD+YpawFu/JXMFMzdJYoCiO2IxCsjXtGw8ZA=
-            =gzYH
-            -----END PGP MESSAGE-----
-          fp: C3FEBC7F6AA094882569460B7EEA4945E3CB4D5B
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.2
+  PRIVATE_API: http://svc-private-api.private.svc.cluster.local:3002/private
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-    name: cm-webpage-config
-    namespace: public
-data:
-    CONFIG_JS: ENC[AES256_GCM,data:+L9lhpnaurm+YmJBcXFFlwRuPrJg7gaiGy2lId3feO3Zo+gSKpYwWcuJNZLdstk4F47CDVfSb3Zh/fVnYoMwEFu30L+AyA5MlsI4VEwYttQmXVIvinwGvc4cKjS8IzX4HEZ9+OgUuNBV6kQATB0icInACi3AtlzTUBfRZ60DKKS85PD0NSg=,iv:PmAGw5/kWl0AYAenIN8FYm7UGLuU8K20vk0S4+wZy3o=,tag:Z/JTKkEpWHvUHdD3O/Vetg==,type:str]
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2022-04-13T06:07:50Z"
-    mac: ENC[AES256_GCM,data:42+ct0hkTw5BmTlVvYxfC9sxAN7oye0Ezh1Hi9HGhWHxNs645PfgzKV7D0DCl/odDGdRwuxoJ6taGeafez20gfQ8D5/TIWYrd8HALgTHq4/HfIbBgdKCa5KQnsBB2VLzlbJYBIKJ20o7AWUMIzZzgMv+F5phlq+ZNDDh1reRdQs=,iv:tfLfNrxlSJxPCni09KERUTM7s0EM8flBE2ZOTlK1n9g=,tag:M/s8mmHRz+M+MgamkTYgXQ==,type:str]
-    pgp:
-        - created_at: "2022-04-13T06:07:49Z"
-          enc: |
-            -----BEGIN PGP MESSAGE-----
+  name: cm-webpage-config
+  namespace: default
 
-            hQIMA9M/oS8IfYXHAQ//SLOG5pDxNrTQyXhjfIPT4eCHqLIBdNrThRnjrjhGpMA0
-            L9nJTHvt7/d6tnCHPF8l1QlCAD0An6ogvtc92Z9HopHb7ZxlgBCpD8bR1IqZH2SC
-            ap28xMUX6RpVH+0U2ypMSdZ8GRvXnnBm/DhD7sVPNlRUNhaJ8vw16Atmpz7lMA4d
-            3Gh2Z8kzkC92+khxIjeXZLv3KGPiMPoE7Zi9oCKECvjXs5PKekn24OEuzuTy7S/f
-            bcC1jmRskiYKegVlDcGo6sjr6bOTYOSLmAnPA44LMe6savAaAaJJxy1/jIP0x0u/
-            xfW7eZ51Bqlh5XTRz8IrNJV+fmTMDHXRSoJAT/bn64rHEXZqoCqywT9NUb+FpkeW
-            ZfU0UbB7d8lAv8t/Fi34J7xAswFX6tHJlFDKNCi18nR4gnrcYmsQFcsbBUjeA7qG
-            oJH/cMGe53bTQa1ilgUeL+S8keOasloeqsnXX4C+5bWrBalhRsE7HjUKP3YBIQPm
-            X55G0e7NU+0TDU1syKVW0ucVSfxr6WXaPgXoXdPBUZyVDllIgBZVoofyxqUDHVAw
-            kKACeWbeB2WyW6OuAguAWyS0GbBWsMo/liT92EzmXU5J9QIE1tdskqJ7dQXzGk79
-            /GzYICA8jeSSGhCOzlUCK8WLkO2GoOqwS8aQ7oZLaE1nstvczjUevCbq/tAPsanS
-            XgENJv4tJuf92vQJ3L5ZrJ/+Z1EtHp28cmpxUOwGXNmybLfglbzMm4p37ZK3Vt/2
-            +piMaX5y7HxBSQpzZXEHScOegqXSD+YpawFu/JXMFMzdJYoCiO2IxCsjXtGw8ZA=
-            =gzYH
-            -----END PGP MESSAGE-----
-          fp: C3FEBC7F6AA094882569460B7EEA4945E3CB4D5B
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.2
+data:
+  CONFIG_JS: |
+    var config = (() => {
+    return {
+      API: "http://api.kube-apps.tk/graphql",
+      WEBSOCKET: "ws://websocket.kube-apps.tk/graphql",
+    };
+    })();
