@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: demoapp-staging
+namespace: public-staging
 commonLabels:
   app: demoapp-staging
   env: staging
